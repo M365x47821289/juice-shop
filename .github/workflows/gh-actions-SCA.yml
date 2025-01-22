@@ -12,8 +12,8 @@ permissions:
 
 jobs:
   Build_Publish_Stage:
-    name: Build
-    runs-on: Default
+    runs-on: ubuntu-latest
+    name: Build, Publish, and Stage
     steps:
     - uses: actions/checkout@v2
     - name: Run a multi-line script
