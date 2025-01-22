@@ -33,7 +33,7 @@ jobs:
         curl -v -X "POST" "https://dependency-track-devsecops-${{ secrets.LABINSTANCEID }}.azurewebsites.net/api/v1/bom" \
              -H 'Content-Type: multipart/form-data' \
              -H 'X-API-Key: ${{ secrets.DTRACKAPIKEY }}' \
-             -F 'project=${{ secrets.DTRACKPROJID }}
+             -F 'project=${{ secrets.DTRACKPROJID }}' \
              -F 'projectname=DevSecOps' \
              -F 'bom=@${{ github.workspace }}/bom.xml'
       continue-on-error: true
