@@ -34,6 +34,6 @@ jobs:
              -H 'Content-Type: application/json' \
              -H 'X-API-Key: ${{ secrets.DTRACKAPIKEY }}' \
              -F "project=${{ secrets.DTRACKPROJID }}" \
-             -d ${{ github.workspace }}/bom.xml
+             -F ${{ github.workspace }}/bom.xml
       continue-on-error: true
                     
