@@ -32,7 +32,7 @@ jobs:
       run: |
         cat ${{ github.workspace }}/bom.xml
         
-        curl -X "POST" https://dependency-track-devsecops-${{ secrets.LABINSTANCEID }}.azurewebsites.net \
+        curl -i -v -X "POST" https://dependency-track-devsecops-${{ secrets.LABINSTANCEID }}.azurewebsites.net \
              -H 'Content-Type: multipart/form-data' \
              -H 'X-API-Key: ${{ secrets.DTRACKAPIKEY }}' \
              -F 'project=project2' \
