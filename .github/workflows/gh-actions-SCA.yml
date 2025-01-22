@@ -31,10 +31,10 @@ jobs:
     - name: Upload BOM to Dependency-Track
       run: |
         curl -X "POST" https://dependency-track-devsecops-${{ secrets.LABINSTANCEID }}.azurewebsites.net \
-             -H 'Content-Type: application/json' \
+             -H 'Content-Type: multipart/form-data' \
              -H 'X-API-Key: ${{ secrets.DTRACKAPIKEY }}' \
-             -F "project=${{ secrets.DTRACKPROJID }}" \
-             -F "autoCreate=true" \
-             -F @${{ github.workspace }}/bom.xml
+             -F 'project=${{ secrets.DTRACKPROJID }}' \
+             -F 'autoCreate=true' \
+             -F 'bom=@${{ github.workspace }}/bom.xml'
       continue-on-error: true
                     
