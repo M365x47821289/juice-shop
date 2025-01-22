@@ -33,7 +33,7 @@ jobs:
         curl -v -X "POST" "https://dependency-track-devsecops-${{ secrets.LABINSTANCEID }}.azurewebsites.net/api/v1/bom" \
              -H 'Content-Type: multipart/form-data' \
              -H 'X-API-Key: ${{ secrets.DTRACKAPIKEY }}' \
-             -F 'project=project2' \
+             -F 'projectname=project2' \
              -F 'autoCreate=true' \
              -F 'bom=@${{ github.workspace }}/bom.xml'
       continue-on-error: true
@@ -46,8 +46,6 @@ jobs:
         serverhostname: dependency-track-devsecops-47526599.azurewebsites.net
         # Dependency-Track API key
         apikey: ${{ secrets.DTRACKAPIKEY }}
-        # Project in Dependency-Track
-        project: DevSecOps2
         # Project name in Dependency-Track
         projectname: DevSecOps2 
         # Automatically create the project in Dependency-Track if it doesn't exist
