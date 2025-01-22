@@ -30,7 +30,7 @@ jobs:
       shell: bash
     - name: Upload BOM to Dependency-Track
       run: |
-        curl -X "PUT" https://dependency-track-devsecops-${{ secrets.LABINSTANCEID }}.azurewebsites.net \
+        curl -X "POST" https://dependency-track-devsecops-${{ secrets.LABINSTANCEID }}.azurewebsites.net \
              -H 'Content-Type: application/json' \
              -H 'X-API-Key: ${{ secrets.DTRACKAPIKEY }}' \
              -F "project=${{ secrets.DTRACKPROJID }}" \
